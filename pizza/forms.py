@@ -20,5 +20,6 @@ class PizzaForm(ModelForm):
         model = Pizza        
         fields = "__all__"        
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': "Pizza Name"})            
+            'name': forms.TextInput(attrs={'class':'form-control', 'placeholder': "Pizza Name",}),
+            'toppings':forms.SelectMultiple(attrs={'class':'form-control'})            
         }

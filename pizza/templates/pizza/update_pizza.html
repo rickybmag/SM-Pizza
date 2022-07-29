@@ -4,12 +4,18 @@
 <center>
 
     <h4 style="margin-top: 30px;">{{ pizza.name }}</h4><br>
+
     <form action="" method="POST">
-        {% csrf_token %}
+
+        {% csrf_token %}        
         {{ form.as_p }}
-        <p style="font-size: 14px; font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p>
-        <br><br>
-        <input type="submit" value="Update" class="btn btn-secondary btn-sm">
+        
+        <p style="font-size: 14px; font-weight: bold; margin-top: 30px;">**Hold the Ctrl/⌘ key to select
+            multiple
+            toppings**</p>
+
+        <input type="submit" value="Update" class="btn btn-secondary btn-sm" style="margin-top: 20px;">
     </form>
+
 </center>
 {% endblock %}

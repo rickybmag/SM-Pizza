@@ -10,7 +10,7 @@
             <div class="container">
                 <div class="row">
                     <div class="card-header; col-9"></div>
-                    {% for topping in toppings %}
+                    {% for topping in toppings|dictsort:'name' %}
                     <div class="card" style="width: 18rem;">
                         <h4>{{ topping.name }}</a></h4>
                         <a href="{% url 'update_topping' topping.id%}" class="text-secondary" style="font-size: 16p; font-weight: bold;">Update</a>
