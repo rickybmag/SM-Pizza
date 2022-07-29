@@ -2,8 +2,7 @@
 
 {% block content %}
 <center>
-    <h1 style="margin-top: 30px;">Add Toppings for Pizzas</h1>
-    <br><br>
+    <h2 style="margin: 30px;">Add New Topping for Pizzas</h2>
     {% if submitted %}
     <h2>Your pizza topping was added to the menu!</h2>
 
@@ -14,7 +13,7 @@
         {% csrf_token %}
 
         {{ form.as_p }}
-        <input type="submit" value="Add Topping" class="btn btn-secondary btn-sm">
+        <input type="submit" value="Add Topping" class="btn btn-secondary btn-sm" style="margin-top: 15px;">
     </form>
     {% endif %}
 </center>

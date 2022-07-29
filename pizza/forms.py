@@ -12,7 +12,7 @@ class ToppingsForm(ModelForm):
             'name': '',
         }
         widgets = {
-            'name': forms.TextInput(attrs={'class':'form-control', 'placeholder': "Add your own toppings to Pizzaria SM's Menu"})
+            'name': forms.TextInput(attrs={'class':'form-control'})
         }
 
 class PizzaForm(ModelForm):
