@@ -3,7 +3,7 @@
 {% block content %}
 <center>
 
-    <h4>{{ pizza.name }}</h4><br>
+    <h4 style="margin-top: 30px;">{{ pizza.name }}</h4><br>
     <form action="" method="POST">
         {% csrf_token %}
         {{ form.as_p }}

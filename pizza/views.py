@@ -29,6 +29,13 @@ def add_toppings(request):
             submitted = True
     return render(request, "pizza/add_toppings.html", {'form': form, 'submitted': submitted})
 
+def update_topping(request, topping_id):
+    toppings = Toppings.objects.get(pk=topping_id)
+    form = ToppingsForm(request.POST or None, instance=toppings)
+    if form.is_valid():
+        form.save()
+        return redirect("list_toppings")
+    return render(request, "pizza/update_topping.html", {'toppings': toppings, 'form': form})
 
 def add_pizza(request):
     submitted = False
@@ -43,19 +50,9 @@ def add_pizza(request):
             submitted = True
     return render(request, "pizza/add_pizza.html", {'form': form, 'submitted': submitted})
 
-
 def show_pizza(request, pizza_id):
     pizza = Pizza.objects.get(pk=pizza_id)
     return render(request, "pizza/show_pizza.html", {'pizza': pizza})
-
-
-def update_pizza(request, pizza_id):
-    pizza = Pizza.objects.get(pk=pizza_id)
-    form = PizzaForm(request.POST or None, instance=pizza)
-    if form.is_valid():
-        form.save()
-        return redirect("list_pizzas")
-    return render(request, "pizza/update_pizza.html", {'pizza': pizza, 'form': form})
 
 def update_pizza(request, pizza_id):
     pizza = Pizza.objects.get(pk=pizza_id)

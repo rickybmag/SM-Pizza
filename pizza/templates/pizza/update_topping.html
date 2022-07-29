@@ -1,0 +1,14 @@
+{% extends "pizza/base.html" %}
+
+{% block content %}
+<center>
+
+    <h2 style="margin-bottom: 20px;">Update Your Topping Below</h2>
+    <form action="" method="POST" style="padding: 0">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- <p style="font-size: 14px; font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p> -->
+        <input type="submit" value="Update" class="btn btn-secondary btn-sm" style="margin-bottom: 10px;">
+    </form>
+</center>
+{% endblock %}

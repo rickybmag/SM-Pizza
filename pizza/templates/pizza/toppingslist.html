@@ -13,8 +13,8 @@
                     {% for topping in toppings %}
                     <div class="card" style="width: 18rem;">
                         <h4>{{ topping.name }}</a></h4>
-                        <a href="{% url 'delete_topping' topping.id%}" class="text-danger"
-                            style="font-size: 16p; font-weight: bold;">Delete</a>
+                        <a href="{% url 'update_topping' topping.id%}" class="text-secondary" style="font-size: 16p; font-weight: bold;">Update</a>
+                        <a href="{% url 'delete_topping' topping.id%}" class="text-danger" style="font-size: 16p; font-weight: bold;">Delete</a>
                     </div>
                     {% endfor %}
                 </div>

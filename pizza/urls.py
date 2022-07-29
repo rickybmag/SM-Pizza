@@ -7,6 +7,7 @@ urlpatterns = [
     path('toppings/', views.toppings, name="list_toppings"),
     path('pizzas/', views.pizzas, name="list_pizzas"),
     path('add_toppings/', views.add_toppings, name='add_toppings'),
+    path('update_topping/<topping_id>', views.update_topping, name="update_topping"),
     path('add_pizza/', views.add_pizza, name='add_pizza'),
     path('show_pizza/<pizza_id>', views.show_pizza, name='show_pizza'),
     path('update_pizza/<pizza_id>', views.update_pizza, name='update_pizza'),
