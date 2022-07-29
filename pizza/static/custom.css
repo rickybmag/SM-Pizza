@@ -16,3 +16,16 @@
 /* section label {
     display: none;
 } */
+
+#id_name {
+    width: 220px;
+    margin-left: 25px;
+}
+
+#id_toppings {
+    width: 220px;
+}
+
+.container {
+    max-width: 1000px;
+}
