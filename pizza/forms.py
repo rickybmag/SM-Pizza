@@ -1,7 +1,7 @@
-from logging import PlaceHolder
 from django import forms
 from django.forms import ModelForm
 from .models import Toppings, Pizza
+from logging import PlaceHolder
 
 #Creates Toppings Form
 class ToppingsForm(ModelForm):
@@ -19,10 +19,10 @@ class PizzaForm(ModelForm):
     class Meta:
         model = Pizza        
         fields = "__all__"
-        labels = {            
-            'name': 'Pizza',     
-            'topping': 'Best',       
-        }
+        # labels = {            
+        #     'name': 'Pizza',     
+        #     'topping': '',       
+        # }
         widgets = {
-            'pizza': forms.TextInput(attrs={'class':'form-control', 'placeholder': "Pizza Name"})
+            'pizza': forms.TextInput(attrs={'class':'form-control', 'placeholder': "Pizza Name"})            
         }
