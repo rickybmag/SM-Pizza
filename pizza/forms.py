@@ -17,13 +17,12 @@ class ToppingsForm(ModelForm):
 
 class PizzaForm(ModelForm):
     class Meta:
-        model = Pizza
-        
+        model = Pizza        
         fields = "__all__"
-        labels = {
-            'name': '',
-            'topping': '',
-        }
+        # labels = {            
+        #     'name': '',     
+        #     'topping': '',       
+        # }
         widgets = {
             'pizza': forms.TextInput(attrs={'class':'form-control', 'placeholder': "Pizza Name"})
         }

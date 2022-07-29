@@ -57,6 +57,14 @@ def update_pizza(request, pizza_id):
         return redirect("list_pizzas")
     return render(request, "pizza/update_pizza.html", {'pizza': pizza, 'form': form})
 
+def update_pizza(request, pizza_id):
+    pizza = Pizza.objects.get(pk=pizza_id)
+    form = PizzaForm(request.POST or None, instance=pizza)
+    if form.is_valid():
+        form.save()
+        return redirect("list_pizzas")
+    return render(request, "pizza/update_pizza.html", {'pizza': pizza, 'form': form})
+
 def delete_pizza(request, pizza_id):
     pizza = Pizza.objects.get(pk=pizza_id)
     pizza.delete()

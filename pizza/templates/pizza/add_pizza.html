@@ -2,21 +2,23 @@
 
 {% block content %}
 <center>
-    <h1>Create pizzas for Pizzaria SM's Menu</h1>
-    <br><br>
+    <h2 style="margin-bottom: 20px;">Create pizzas for The Pizza Shop's Menu</h2>
+    
     {% if submitted %}
-    <h2>Your pizza was added to the menu!</h2>
+    <p>Your pizza was added to the menu!</p>
     <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_pizzas' %}" role="button">Return to Pizza List</a>
 
     {% else %}
+    <div style="margin: 0 auto">
     <form action="" method=POST>
-        {% csrf_token %}
-
+        {% csrf_token %}        
         {{ form.as_p }}
-        <p style="font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p>
         
-        <br><br>
-        <input type="submit" value="Add Pizza" class="btn btn-secondary">
+        <p style="font-size: 14px; font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p>
+        
+        
+        <input style="margin-top: 10px;"type="submit" value="Add Pizza" class="btn btn-secondary">
+    </div>
     </form>
     {% endif %}
 </center>
