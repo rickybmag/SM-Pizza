@@ -1,12 +1,19 @@
 {% extends "pizza/base.html" %}
 
 {% block content %}
-<h1 style="padding-top: 100px; text-align: center; position: static;">Hello Chef!</h1>
+<h1 style="margin: 50px; text-align: center; position: static;">Welcome to The Pizza Shop</h1>
 
-<h2 style="padding-top: 100px; text-align: center; position: static;">Welcome to The Pizza Shop. Click Toppings in the navigation bar to see our toppings List
-    or Pizzas to view The Shop's list of unique pizzas! <br>
-    You will also be able to add or remove toppings while viewing the toppings list. As well as update, delete,
-    or create your own unique pizzas while viewing the list of pizzas!
-</h2>
+<div class="container">
+    <div class="row">
+      <div class="col" style="margin: 30px;">
+        <h4 style="text-align: center;">Owners</h4>
+        <p>Click the "Shop Owner" drop down to add, update, or remove pizza toppings!</p>
+      </div>
+      <div class="col" style="margin: 30px;">
+        <h4 style="text-align: center;">Pizza Chefs</h4>
+        <p>Click "Pizza Chefs" to make your own pizza, update current menu items, or 86 a pizza. Work with the toppings the owners provide</p>
+      </div>
+
+
 
 {% endblock %}
