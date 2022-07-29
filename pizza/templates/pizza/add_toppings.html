@@ -2,7 +2,7 @@
 
 {% block content %}
 <center>
-    <h1>Add Toppings for Pizzas</h1>
+    <h1 style="margin-top: 30px;">Add Toppings for Pizzas</h1>
     <br><br>
     {% if submitted %}
     <h2>Your pizza topping was added to the menu!</h2>
@@ -10,7 +10,7 @@
     <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_toppings' %}" role="button">Return to Toppings List</a>
 
     {% else %}
-    <form action="" method=POST ALIGN="center">
+    <form action="" method=POST>
         {% csrf_token %}
 
         {{ form.as_p }}
