@@ -1,0 +1,23 @@
+{% extends "pizza/base.html" %}
+
+{% block content %}
+<center>
+    <h1>Create pizzas for Pizzaria SM's Menu</h1>
+    <br><br>
+    {% if submitted %}
+    <h2>Your pizza was added to the menu!</h2>
+    <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_pizzas' %}" role="button">Return to Pizza List</a>
+
+    {% else %}
+    <form action="" method=POST>
+        {% csrf_token %}
+
+        {{ form.as_p }}
+        <p style="font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p>
+        
+        <br><br>
+        <input type="submit" value="Add Pizza" class="btn btn-secondary">
+    </form>
+    {% endif %}
+</center>
+{% endblock %}

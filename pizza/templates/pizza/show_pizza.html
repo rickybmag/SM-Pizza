@@ -1,0 +1,19 @@
+{% extends "pizza/base.html" %}
+
+{% block content %}
+<center>
+
+    <h1>{{pizza.name}} </h1><br>
+ 
+    <h3 style="font-weight: bolder;">Toppings</h3><br>
+
+    {% for pizzas in pizza.toppings.all|dictsort:'name' %}
+    <p>{{ pizzas.name}}</p>
+    {% endfor %}
+
+    <a href="{% url 'update_pizza' pizza.id%}" class="text-secondary"
+        style="font-size: 16p; font-weight: bold;">Update</a> &nbsp; &nbsp;
+    <a href="{% url 'delete_pizza' pizza.id%}" class="text-danger" style="font-size: 16p; font-weight: bold;">Delete</a>
+
+</center>
+{% endblock %}

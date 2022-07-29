@@ -1,0 +1,31 @@
+{% extends "pizza/base.html" %}
+
+{% block content %}
+<div class="container text-center">
+    <h1>List of Pizzaria SM's Toppings</h1>
+    <br>
+
+    <div class="container; ALIGN=center">
+        <ul>
+            <div class="container">
+                <div class="row">
+                    <div class="card-header; col-9"></div>
+                    {% for topping in toppings %}
+                    <div class="card text-center" style="width: 18rem;">
+                        <h4>{{ topping.name }}</a></h4>
+                        <a href="{% url 'delete_topping' topping.id%}" class="text-danger"
+                            style="font-size: 16p; font-weight: bold;">Delete</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </ul>
+    </div><br>
+
+    <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'add_toppings' %}" role="button">Add Your Own
+        Toppings</a>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "pizza/base.html" %}
+
+{% block title%}
+<title>SM Pizza</title>
+
+{% endblock %}
+
+{% block content %}
+<center>
+
+    <h4>{{ pizza.name }}</h4><br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p style="font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p>
+        <br><br>
+        <input type="submit" value="Update" class="btn btn-secondary btn-sm">
+    </form>
+</center>
+{% endblock %}

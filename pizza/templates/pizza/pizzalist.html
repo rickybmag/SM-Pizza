@@ -1,0 +1,21 @@
+{% extends "pizza/base.html" %}
+
+{% block content %}
+<center>
+    <h1>Pizzaria SM Pizza Menu</h1>
+    <br>
+    <ul>
+        {% for pizza in pizzas %}
+        <div class="card" style="width: 18rem">
+            <div class="card-header text-center">
+                <h4><a href="{% url 'show_pizza' pizza.id %}" class="text-dark">{{ pizza.name }}</a></h4>
+                <a href="{% url 'update_pizza' pizza.id%}" class="text-secondary" style="font-size: 16p; font-weight: bold;">Update</a>
+                <a href="{% url 'delete_pizza' pizza.id%}" class="text-danger" style="font-size: 16p; font-weight: bold;">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
+    </ul>
+
+    <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'add_pizza' %}" role="button">Create Your Own Pizza</a>
+</center>
+{% endblock %}
