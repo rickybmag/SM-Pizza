@@ -6,14 +6,18 @@
     {% if submitted %}
     <h2>Your pizza topping was added to the menu!</h2>
 
-    <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_toppings' %}" role="button">Return to Toppings List</a>
+    <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_toppings' %}" role="button">Return to
+        Toppings List</a>
 
     {% else %}
     <form action="" method=POST>
         {% csrf_token %}
-
-        {{ form.as_p }}
-        <input type="submit" value="Add Topping" class="btn btn-secondary btn-sm" style="margin-top: 15px;">
+        <label style="margin-right: 20px">
+            {{ form.as_p }}
+        </label>
+        <br>
+        <input type="submit" value="Add Topping" class="btn btn-secondary btn-sm">
+        
     </form>
     {% endif %}
 </center>

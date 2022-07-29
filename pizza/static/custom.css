@@ -24,6 +24,8 @@
 
 #id_toppings {
     width: 220px;
+    position: relative;
+    left: 12px;
 }
 
 .container {
