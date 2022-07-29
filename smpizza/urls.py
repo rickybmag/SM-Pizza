@@ -5,5 +5,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("pizza.urls")),
     path('toppings/', include("pizza.urls")),
-    path('pizzas/', include("pizza.urls")),
+    path('shop/', include("pizza.urls")),
 ]
