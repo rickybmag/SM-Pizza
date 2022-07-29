@@ -4,8 +4,8 @@ from .models import Pizza, Toppings
 from .forms import ToppingsForm, PizzaForm
 
 
-def home(request):    
-    return render(request, "pizza/home.html", {})
+def index(request):    
+    return render(request, "pizza/index.html", {})
     
 
 def toppings(request):
