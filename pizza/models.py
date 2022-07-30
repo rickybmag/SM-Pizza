@@ -1,6 +1,6 @@
 from django.db import models
 
-
+#Simple Toppings model where we just need the name
 class Toppings(models.Model):    
     name = models.CharField(null=True, max_length=25, unique=True)    
 
