@@ -2,18 +2,20 @@
 
 {% block content %}
 <center>
+    <!--This "if submitted" block will run once the topping has been added to the toppings list-->
     <h2 style="margin: 30px;">Create pizzas for The Pizza Shop's Menu</h2>
-    
     {% if submitted %}
     <p>Your pizza was added to the menu!</p>
     <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_pizzas' %}" role="button">Return to Pizza List</a>
 
+    <!--If the new pizza hasn't been submitted, the block will run the Pizza form where it can be added and submitted-->
     {% else %}
     <div class="form-group" style="margin-left: 0">
     <form action="" method=POST>
         {% csrf_token %}        
         {{ form.as_p }}
         
+        <!--Added instructions for multiple toppings-->
         <p style="font-size: 14px; font-weight: bold;">**Hold the Ctrl/⌘ key to select multiple toppings**</p>
         
         

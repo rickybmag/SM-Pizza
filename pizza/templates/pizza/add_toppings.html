@@ -2,6 +2,7 @@
 
 {% block content %}
 <center>
+    <!--This "if submitted" block will run once the topping has been added to the toppings list-->
     <h2 style="margin: 30px;">Add New Topping for Pizzas</h2>
     {% if submitted %}
     <h2>Your pizza topping was added to the menu!</h2>
@@ -9,6 +10,7 @@
     <a class="btn btn-primary; btn btn-outline-secondary" href="{% url 'list_toppings' %}" role="button">Return to
         Toppings List</a>
 
+    <!--If the new topping hasn't been submitted, the block will run the Toppings form where it can be added and submitted-->
     {% else %}
     <form action="" method=POST>
         {% csrf_token %}
